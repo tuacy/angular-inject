@@ -5,7 +5,9 @@ import {NgmoduleProvidersRoutingModule} from './ngmodule-providers-routing.modul
 import xml from 'highlight.js/lib/languages/xml';
 import less from 'highlight.js/lib/languages/less';
 import typescript from 'highlight.js/lib/languages/typescript';
-import {HighlightModule} from "ngx-highlightjs";
+import {HighlightModule} from 'ngx-highlightjs';
+import {NgmoduleProvidersService} from './ngmodule-providers.service';
+import {NgmoduleProvidersResolveModule} from './ngmodule-providers-resolve.module';
 
 export function highlightLanguages() {
     return [
@@ -19,11 +21,18 @@ export function highlightLanguages() {
     declarations: [
         NgmoduleProvidersComponent
     ],
+    providers: [
+        NgmoduleProvidersService,
+    ],
     imports: [
         CommonModule,
         HighlightModule.forRoot({
             languages: highlightLanguages
         }),
+        /**
+         * 导入过渡NgModule
+         */
+        NgmoduleProvidersResolveModule,
         NgmoduleProvidersRoutingModule
     ]
 })
