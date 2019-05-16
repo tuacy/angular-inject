@@ -1,9 +1,12 @@
 import {Component, OnInit} from '@angular/core';
+import {ComponentInjectService} from './component-inject.service';
 
 @Component({
     selector: 'app-ngmodule-providers',
     templateUrl: './ngmodule-providers.component.html',
-    styleUrls: ['./ngmodule-providers.component.less']
+    styleUrls: ['./ngmodule-providers.component.less'],
+    providers: [ComponentInjectService],   // providers提供的服务在当前组件和子组件都可以使用
+    // viewProviders: [ComponentInjectService], // viewProviders提供的服务在当前组件使用
 })
 export class NgmoduleProvidersComponent implements OnInit {
 
@@ -84,6 +87,36 @@ export class NgmoduleProvidersComponent implements OnInit {
         '})\n' +
         'export class NgmoduleProvidersModule {\n' +
         '}\n';
+
+    componentServiceCode = 'import { Injectable } from \'@angular/core\';\n' +
+        '\n' +
+        '/**\n' +
+        ' * 当前服务在组件里面使用，会在需要使用的组件里面注入\n' +
+        ' */\n' +
+        '@Injectable()\n' +
+        'export class ComponentInjectService {\n' +
+        '\n' +
+        '  constructor() { }\n' +
+        '}';
+
+    componentCode = 'import {ComponentInjectService} from \'./component-inject.service\';\n' +
+        '\n' +
+        '@Component({\n' +
+        '    selector: \'app-ngmodule-providers\',\n' +
+        '    templateUrl: \'./ngmodule-providers.component.html\',\n' +
+        '    styleUrls: [\'./ngmodule-providers.component.less\'],\n' +
+        '    providers: [ComponentInjectService],   // providers提供的服务在当前组件和子组件都可以使用\n' +
+        '    // viewProviders: [ComponentInjectService], // viewProviders提供的服务在当前组件使用\n' +
+        '})\n' +
+        'export class NgmoduleProvidersComponent implements OnInit {\n' +
+        '    \n' +
+        '    constructor(private service: ComponentInjectService) {\n' +
+        '    }\n' +
+        '\n' +
+        '    ngOnInit() {\n' +
+        '    }\n' +
+        '\n' +
+        '}';
 
     constructor() {
     }

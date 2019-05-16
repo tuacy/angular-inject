@@ -3,12 +3,16 @@ import {RouterModule, Routes} from '@angular/router';
 
 const routes: Routes = [
     {
-        path: 'providers',
-        loadChildren: "./ngmodue-providers/ngmodule-providers.module#NgmoduleProvidersModule"
+        path: 'injector',
+        loadChildren: "./injector/ngmodule-providers.module#NgmoduleProvidersModule"
+    },
+    {
+        path: 'provider',
+        loadChildren: "./provider/provider.module#ProviderModule"
     },
     {
         path: "",
-        redirectTo: "/providers",
+        redirectTo: "/injector",
         pathMatch: "full"
     }
 ];
