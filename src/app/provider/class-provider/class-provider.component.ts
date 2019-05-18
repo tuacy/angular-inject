@@ -14,7 +14,6 @@ export class ClassProviderComponent implements OnInit {
                 private lazyService: LazyClassProviderService) {
         // 通过Injector获取到TOKEN_MODULE_CLASS_PROVIDER对应的服务
         const service: ModuleClassProviderService = injector.get(TOKEN_MODULE_CLASS_PROVIDER);
-        lazyService.textFunction();
     }
 
     ngOnInit() {
