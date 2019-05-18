@@ -1,3 +1,10 @@
-import {InjectionToken} from "@angular/core";
+import {InjectionToken} from '@angular/core';
+import {Config} from './provider/value-provider/config';
 
 export const TOKEN_MODULE_CLASS_PROVIDER = new InjectionToken<any>('TOKEN_MODULE_CLASS_PROVIDER');
+export const TOKEN_MODULE_CONFIG = new InjectionToken<Config>('TOKEN_MODULE_CONFIG');
+export const TOKEN_COMPONENT_VALUE = new InjectionToken<string>('TOKEN_COMPONENT_VALUE');
+
+// FactoryProvider
+export const TOKEN_FACTORY_MODULE = new InjectionToken<string>('TOKEN_FACTORY_MODULE');
+
