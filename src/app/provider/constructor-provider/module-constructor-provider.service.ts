@@ -13,6 +13,6 @@ export class ModuleConstructorProviderService {
 
     testFunction() {
         // console.log(this.config.version);
-        console.log('aaaaaaaaaaaaa');
+        console.log('nnnnnnnnnnnnn');
     }
 }

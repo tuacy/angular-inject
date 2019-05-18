@@ -20,7 +20,7 @@ constructorRely.version = 'abac';
     ],
     providers: [
         {provide: TOKEN_CONSTRUCTOR_RELY, useValue: constructorRely}, // 提前把ModuleConstructorProviderService构造的时候需要的东西注入进来
-        {provide: ModuleConstructorProviderService, deps: [TOKEN_CONSTRUCTOR_RELY]}
+        {provide: ModuleConstructorProviderService, deps: []}
     ]
 })
 export class ConstructorProviderModule {

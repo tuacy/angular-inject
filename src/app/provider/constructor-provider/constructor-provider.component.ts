@@ -13,7 +13,7 @@ export class ConstructorProviderComponent implements OnInit {
     constructor(private injector: Injector,
                 @Inject(TOKEN_CONSTRUCTOR_RELY) private config: ModuleConstructorConfig,
                 private moduleService: ModuleConstructorProviderService) {
-        // moduleService.testFunction();
+        moduleService.testFunction();
         console.log(config.version);
     }
 
