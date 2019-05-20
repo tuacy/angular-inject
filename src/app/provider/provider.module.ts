@@ -3,7 +3,6 @@ import {CommonModule} from '@angular/common';
 import {ProviderRoutingModule} from './provider-routing.module';
 import {ProviderComponent} from './provider.component';
 import {ClassProviderModule} from "./class-provider/class-provider.module";
-import {ConstructorProviderModule} from "./constructor-provider/constructor-provider.module";
 import {ExistingProviderModule} from "./existing-provider/existing-provider.module";
 import {FactoryProviderModule} from "./factory-provider/factory-provider.module";
 import {TypeProviderModule} from "./type-provider/type-provider.module";
@@ -16,7 +15,6 @@ import {ValueProviderModule} from "./value-provider/value-provider.module";
     imports: [
         CommonModule,
         ClassProviderModule,
-        ConstructorProviderModule,
         ExistingProviderModule,
         FactoryProviderModule,
         TypeProviderModule,
